@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2ABAA0</color>
+    <color name="colorAccent">#00CEA1</color>
+    <color name="colorPrimaryDark">#01987E</color>
+    <color name="colorBackgroundLightGray">#F8F8F8</color>
+    <color name="colorBackgroundMediumGray">#EEEEEE</color>
+    <color name="borderColor">#E7E7E7</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="textMediumGray">#828282</color>
+    <color name="textDarkGray">#2D2D2D</color>
+    <color name="dollarGreen">#159A12</color>
+    <color name="colorLightBlue">#5CC5F8</color>
+    <color name="colorLikeRegisterOrange">#F5A623</color>
+    <color name="colorLoginButton">#80B34D</color>
+    <color name="facebookBlue">#195FA0</color>
+    <color name="clear">#00000000</color>
+</resources>
