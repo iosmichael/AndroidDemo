@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <ToggleButton
-        android:text="ToggleButton"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toggleButton" />
+        android:inputType="textPersonName"
+        android:text="Content"
+        android:ems="12"
+        android:id="@+id/editText"
+        android:layout_weight="0.10" />
 
-    <ToggleButton
-        android:text="ToggleButton"
+    <Button
+        android:text="Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toggleButton2" />
+        android:id="@+id/post_button" />
 </LinearLayout>
