@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void showProfileActivity(){
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);
     }
 

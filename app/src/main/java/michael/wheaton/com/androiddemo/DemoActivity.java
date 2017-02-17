@@ -1,7 +1,6 @@
 package michael.wheaton.com.androiddemo;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -21,8 +20,8 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
     public EditText content;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.demo);
         postBtn = (Button) findViewById(R.id.post_button);
         content = (EditText) findViewById(R.id.editText);
@@ -31,6 +30,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        System.out.print("Post post = dataSnapshot.getValue(Post.class)");
         if(content.getText().toString().isEmpty()){
             return;
         }
