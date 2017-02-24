@@ -12,4 +12,8 @@ public class Post {
         this.author = author;
         this.title = title;
     }
+    public Post(){
+        this.author = "";
+        this.title = "";
+    }
 }

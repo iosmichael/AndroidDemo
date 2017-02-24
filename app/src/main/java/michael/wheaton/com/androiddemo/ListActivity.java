@@ -20,16 +20,16 @@ import java.util.ArrayList;
 public class ListActivity extends AppCompatActivity implements ValueEventListener{
 
     private ListView listView;
-    private ArrayList<String> posts;
-    private String[] data;
+    private ArrayList<Post> posts;
+    private String[] data = new String[0];
     private ArrayAdapter<String> itemsAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
         posts = new ArrayList<>();
-        String [] data = {"Cheese", "Pepperoni", "Black Olives"};
-        itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
+
+        itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.data);
         listView = (ListView) findViewById(R.id.listview);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("messages");
@@ -42,24 +42,27 @@ public class ListActivity extends AppCompatActivity implements ValueEventListene
     public void onDataChange(DataSnapshot dataSnapshot) {
         posts.removeAll(posts);
         for (DataSnapshot child : dataSnapshot.getChildren()) {
+            Post post = new Post();
             for(DataSnapshot elem: child.getChildren()){
-                if(elem.getKey()=="title"){
-                    posts.add((String)elem.getValue());
-
+                if (elem.getKey().equals("title")){
+                    post.title = (String) elem.getValue();
                 }
             }
+            posts.add(post);
         }
         int count = 0;
-        for (String post : posts){
+        for (Post post : posts){
             count++;
         }
         String[] array = new String[count];
         int i = 0;
-        for (String post : posts){
-            array[i] = post;
+        for (Post post : posts){
+            array[i] = post.title;
             i++;
         }
-        data = array;
+        this.data = array;
+        itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.data);
+        listView.setAdapter(itemsAdapter);
     }
 
     @Override
