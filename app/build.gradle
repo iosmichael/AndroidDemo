@@ -1,3 +1,5 @@
+//If it didn't run, add Google Service Library in Android SDK Manager
+//Update Google Repo tp the most recent version
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
